@@ -17,7 +17,7 @@ st.set_page_config(
 # Paths
 # -----------------------------
 APP_DIR = Path(__file__).resolve().parent
-MODEL_PATH = APP_DIR / "deploy_resources" / "xgb_topk6_deploy_res.joblib"
+MODEL_PATH = APP_DIR / "xgb_topk6_deploy_res.joblib"
 
 # -----------------------------
 # Constants
@@ -97,7 +97,7 @@ with st.expander("模型信息"):
 
 if not MODEL_PATH.exists():
     st.error(f"找不到模型文件：{MODEL_PATH}")
-    st.info("请确认 deploy_resources 文件夹和 xgb_topk6_deploy_res.joblib 已上传到仓库。")
+    st.info("请先运行 build_deploy_resources.py 生成 xgb_topk6_deploy_res.joblib，并确保它与 app.py 位于同一目录。")
     st.stop()
 
 try:
