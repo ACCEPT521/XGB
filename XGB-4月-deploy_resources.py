@@ -28,10 +28,8 @@ os.environ["NUMEXPR_NUM_THREADS"] = "1"
 BASE_DIR = Path(r"D:\4.毕业论文相关\数据重整-12-31\4月\部署代码-XGB")
 TRAIN_PATH = Path(r"D:\4.毕业论文相关\数据重整-12-31\TRAIN\一些前期结果\train_data.xlsx")
 
-DEPLOY_DIR = BASE_DIR / "deploy_resources"
-DEPLOY_DIR.mkdir(parents=True, exist_ok=True)
-
-OUT_PATH = DEPLOY_DIR / "xgb_topk6_deploy_res.joblib"
+# 直接导出到当前目录，不再放 deploy_resources 子文件夹
+OUT_PATH = BASE_DIR / "xgb_topk6_deploy_res.joblib"
 
 TARGET_COL = "EPDSLL"
 ID_COL = "id_仅标识"
